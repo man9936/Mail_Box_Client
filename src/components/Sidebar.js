@@ -11,7 +11,7 @@ import SideNav, {
   Nav,
   NavItem,
   NavIcon,
-  NavText
+  NavText,
 } from "@trendmicro/react-sidenav";
 import { SelectionState } from "draft-js";
 
@@ -72,8 +72,8 @@ const Sidebar = () => {
             />
           </NavIcon>
           <NavText>
-            Inbox{" "}
-            <span>{unreadMessageCount > 0 ? unreadMessageCount : ""}</span>
+            Inbox ------ {unreadMessageCount} Unread
+            {/* <span></span> */}
           </NavText>
         </NavItem>
         <NavItem eventKey="Sent" onClick={sentHandler}>
