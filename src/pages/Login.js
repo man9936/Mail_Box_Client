@@ -49,11 +49,11 @@ const Login = () => {
         body: JSON.stringify({
           email: emailRef.current.value,
           password: passwordRef.current.value,
-          returnSecureToken: true
+          returnSecureToken: true,
         }),
         headers: {
-          "Content-Type": "application/json"
-        }
+          "Content-Type": "application/json",
+        },
       });
 
       const data = await respense.json();
@@ -73,37 +73,6 @@ const Login = () => {
 
   return (
     <>
-      {/* <div className={classes["main-form"]}>
-        <form className={classes.form} onSubmit={loginFormHandler}>
-          <div className={classes.title}>
-            {hasAccount ? "Login" : "Sign Up"}
-          </div>
-          <input type="email" placeholder="Email" ref={emailRef} required />
-          <input
-            type="password"
-            placeholder="Password"
-            ref={passwordRef}
-            required
-          />
-          {!hasAccount && (
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              ref={confirmPasswordRef}
-              required
-            />
-          )}
-          <div className={classes.button}>
-            <button type="submit">{hasAccount ? "Login" : "Sign Up"}</button>
-          </div>
-        </form>
-        <div onClick={hasAccountHandler} className={classes.hasAccount}>
-          {hasAccount
-            ? "Don`t have an account? Sign Up"
-            : "Have an account? Sign In"}
-        </div>
-      </div> */}
-
       <Container className="mt-5" style={{ width: "400px" }}>
         <Card className="shadow-lg" style={{ marginTop: "100px" }}>
           <Card.Header style={{ backgroundColor: "lightseagreen" }}>
@@ -141,7 +110,7 @@ const Login = () => {
                 <Button
                   style={{
                     backgroundColor: "lightseagreen",
-                    marginLeft: "120px"
+                    marginLeft: "120px",
                   }}
                   type="submit"
                 >

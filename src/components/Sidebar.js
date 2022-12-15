@@ -40,21 +40,6 @@ const Sidebar = () => {
   };
 
   return (
-    // <div className={classes.sidebar}>
-    //   <button className={classes.compose} onClick={composeHandler}>
-    //     Compose
-    //   </button>
-    //   <li
-    //     onClick={receivedHandler}
-    //     className={state.received ? classes.received : ''}
-    //   >
-    //     <span>Inbox</span>
-    //     <span>{unreadMessageCount > 0 ? unreadMessageCount : ''}</span>
-    //   </li>
-    //   <li onClick={sentHandler} className={state.sent ? classes.sent : ''}>
-    //     Sent
-    //   </li>
-    // </div>
     <SideNav>
       <SideNav.Toggle onClick={visibilityHandler} />
       <SideNav.Nav defaultSelected="none">
