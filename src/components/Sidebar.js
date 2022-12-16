@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Badge from "react-bootstrap/Badge";
 
 import classes from "./Sidebar.module.css";
 import { showActions } from "../store/show-slice";
@@ -57,7 +58,11 @@ const Sidebar = () => {
             />
           </NavIcon>
           <NavText>
-            Inbox ------ {unreadMessageCount} Unread
+            Inbox
+            <Badge bg="secondary">
+              {"  "}
+              {unreadMessageCount}: unread
+            </Badge>
             {/* <span></span> */}
           </NavText>
         </NavItem>
