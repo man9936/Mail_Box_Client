@@ -6,7 +6,6 @@ import { Editor } from "react-draft-wysiwyg";
 import { EditorState } from "draft-js";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
-import classes from "./Compose.module.css";
 import { addMail } from "../store/mail-actions";
 
 const Compose = () => {
@@ -33,40 +32,20 @@ const Compose = () => {
       from: JSON.parse(localStorage.getItem("idToken")).email,
       to: emailRef.current.value,
       title: titleRef.current.value,
-      text: editorState.getCurrentContent().getPlainText()
+      text: editorState.getCurrentContent().getPlainText(),
     };
     dispatch(addMail(mailData, clearInputFields));
   };
 
   return (
     <>
-      {/* <form className={classes.form} onSubmit={sendMailHandler}>
-      <div className={classes.to}>
-        <label>To : </label>
-        <input type='email' ref={emailRef} required />
-      </div>
-      <div className={classes.title}>
-        <label>Title : </label>
-        <input type='text' ref={titleRef} required />
-      </div>
-      <Editor
-        editorState={editorState}
-        onEditorStateChange={handleEditorChange}
-        wrapperClassName={classes['wrapper-class']}
-        editorClassName={classes['editor-class']}
-        toolbarClassName={classes['toolbar-class']}
-      />
-      <div className={classes.button}>
-        <button type='submit'>Send</button>
-      </div>
-    </form> */}
-
       <Container>
         <Card
           className="shadow-lg"
           style={{ margin: "20px 20%", width: "80%", height: "60%" }}
         >
           <Card.Header className="bg-secondary">
+            <h3>Compose New Mail</h3>
             <Form>
               <input
                 placeholder="To"

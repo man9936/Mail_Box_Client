@@ -7,6 +7,7 @@ import Sent from "../components/Sent";
 import Received from "../components/Received";
 import { replaceMail } from "../store/mail-actions";
 import { updateMail } from "../store/mail-actions";
+import WelcomeModal from "../components/WelcomeModal";
 
 const Home = () => {
   const state = useSelector((state) => state.show);
@@ -20,20 +21,22 @@ const Home = () => {
     const emailUrl = loggedUserEmail.replace("@", "").replace(".", "");
     dispatch(replaceMail(emailUrl, loggedUserEmail));
   }
-
-  setInterval(() => {
-    if (isLoggedIn) {
-      const loggedUserEmail = JSON.parse(localStorage.getItem("idToken")).email;
-      const emailUrl = loggedUserEmail.replace("@", "").replace(".", "");
-      dispatch(updateMail(emailUrl, loggedUserEmail, currentMailData));
-    } else {
-      return;
-    }
-  }, 5000);
+  if (isLoggedIn) {
+    setInterval(() => {
+      if (isLoggedIn) {
+        const loggedUserEmail = JSON.parse(
+          localStorage.getItem("idToken")
+        ).email;
+        const emailUrl = loggedUserEmail.replace("@", "").replace(".", "");
+        dispatch(updateMail(emailUrl, loggedUserEmail, currentMailData));
+      }
+    }, 5000);
+  }
 
   return (
     <React.Fragment>
       <Sidebar />
+      <WelcomeModal />
       {state.compose && <Compose />}
       {state.sent && <Sent />}
       {state.received && <Received />}

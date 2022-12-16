@@ -21,35 +21,6 @@ const MainNavigation = () => {
 
   return (
     <>
-      {/* <div className={classes.mainNav}>
-        <nav>
-          <ul>
-            <li className={classes.welcome}>
-              <NavLink
-                to="/home"
-                className={({ isActive }) => (isActive ? classes.active : "")}
-              >
-                <i className="ri-mail-line"></i>
-                Mail Box
-              </NavLink>
-            </li>
-            <li className={classes.auth}>
-              <NavLink
-                onClick={authHandler}
-                to="/login"
-                className={({ isActive }) => (isActive ? classes.active : "")}
-              >
-                {!isLoggedIn ? "Login" : "Logout"}
-                {!isLoggedIn ? (
-                  <i className="ri-login-circle-line"></i>
-                ) : (
-                  <i className="ri-logout-circle-line"></i>
-                )}
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
-      </div> */}
       <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand style={{ marginLeft: "30%" }}>
@@ -77,11 +48,6 @@ const MainNavigation = () => {
                 )}
               </NavLink>
             </Navbar.Text>
-
-            {/* <Navbar.Text>
-              Signed in as:{"  "}
-              <a style={{ color: "orange" }} href="#login"></a>
-            </Navbar.Text> */}
           </Navbar.Collapse>
         </Container>
       </Navbar>
