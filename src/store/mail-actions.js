@@ -12,8 +12,8 @@ export const addMail = (mail, clearInput) => {
           method: "POST",
           body: JSON.stringify({ ...mail, read: true }),
           headers: {
-            "Content-Type": "application/json"
-          }
+            "Content-Type": "application/json",
+          },
         }
       );
 
@@ -24,8 +24,8 @@ export const addMail = (mail, clearInput) => {
             method: "POST",
             body: JSON.stringify({ ...mail, read: false }),
             headers: {
-              "Content-Type": "application/json"
-            }
+              "Content-Type": "application/json",
+            },
           }
         );
       }
@@ -37,7 +37,7 @@ export const addMail = (mail, clearInput) => {
           mailActions.add({
             id: data.name,
             ...mail,
-            read: true
+            read: true,
           })
         );
         clearInput();
@@ -55,7 +55,7 @@ export const replaceMail = (emailUrl, loggedUserEmail) => {
   return async (dispatch) => {
     try {
       const response = await fetch(
-        `https://mail-box-client-88922-default-rtdb.firebaseio.com/${emailUrl}.json`
+        `https://auth-react-b1ea2-default-rtdb.firebaseio.com/${emailUrl}.json`
       );
 
       const data = await response.json();
@@ -74,7 +74,7 @@ export const replaceMail = (emailUrl, loggedUserEmail) => {
         dispatch(
           mailActions.replace({
             mailData: mailData,
-            unreadMessageCount: unreadMessageCount
+            unreadMessageCount: unreadMessageCount,
           })
         );
       } else {
@@ -96,7 +96,7 @@ export const deleteMail = (mail) => {
       const response = await fetch(
         `https://auth-react-b1ea2-default-rtdb.firebaseio.com/${emailUrl}/${mail.id}.json`,
         {
-          method: "DELETE"
+          method: "DELETE",
         }
       );
 
@@ -138,7 +138,7 @@ export const updateMail = (emailUrl, loggedUserEmail, currentMailData) => {
           dispatch(
             mailActions.replace({
               mailData: mailData,
-              unreadMessageCount: unreadMessageCount
+              unreadMessageCount: unreadMessageCount,
             })
           );
         }
