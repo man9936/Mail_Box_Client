@@ -6,7 +6,6 @@ import { Editor } from "react-draft-wysiwyg";
 import { EditorState } from "draft-js";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
-
 import { addMail } from "../store/mail-actions";
 
 const Compose = () => {
@@ -46,6 +45,7 @@ const Compose = () => {
           style={{ margin: "20px 20%", width: "80%", height: "60%" }}
         >
           <Card.Header className="bg-secondary">
+            <h3>Compose New Mail</h3>
             <Form>
               <input
                 placeholder="To"

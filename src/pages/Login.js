@@ -75,9 +75,9 @@ const Login = () => {
     <>
       <Container className="mt-5" style={{ width: "400px" }}>
         <Card className="shadow-lg" style={{ marginTop: "100px" }}>
-          <Card.Header style={{ backgroundColor: "lightseagreen" }}>
+            <Card.Header style={{ backgroundColor: "lightseagreen" }}>
             <h4>{hasAccount ? "Login" : "Sign Up"}</h4>
-          </Card.Header>
+        </Card.Header>
           <Card.Body>
             <Form onSubmit={loginFormHandler}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
