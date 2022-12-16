@@ -34,8 +34,8 @@ const MailData = (props) => {
             method: "PUT",
             body: JSON.stringify({ ...props.mail, read: true }),
             headers: {
-              "Content-Type": "application/json"
-            }
+              "Content-Type": "application/json",
+            },
           }
         );
 
@@ -58,7 +58,6 @@ const MailData = (props) => {
   };
 
   return (
- 
     <ListGroup as="ol" numbered>
       <ListGroup.Item
         as="li"
@@ -76,7 +75,11 @@ const MailData = (props) => {
           {x}
         </Badge>
 
-        <Badge className="bg-danger" onClick={removeMailHandler}>
+        <Badge
+          style={{ cursor: "pointer" }}
+          className="bg-danger"
+          onClick={removeMailHandler}
+        >
           <small> Delete</small>
         </Badge>
 
