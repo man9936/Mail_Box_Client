@@ -7,6 +7,7 @@ import Sent from "../components/Sent";
 import Received from "../components/Received";
 import { replaceMail } from "../store/mail-actions";
 import { updateMail } from "../store/mail-actions";
+import WelcomeModal from "../components/WelcomeModal";
 
 const Home = () => {
   const state = useSelector((state) => state.show);
@@ -35,6 +36,7 @@ const Home = () => {
   return (
     <React.Fragment>
       <Sidebar />
+      <WelcomeModal />
       {state.compose && <Compose />}
       {state.sent && <Sent />}
       {state.received && <Received />}
